@@ -61,10 +61,10 @@ public class Research {
     public void SuggestionPageCommun(Member member) throws SQLException {
         ArrayList<Integer> listPage = new ArrayList<Integer>();
         Like page = new Like();
-        listPage = page.listLikerPage(member.getId());
+        listPage = (ArrayList<Integer>) page.listLikerPage(member.getId());
         HashMap<Integer, Integer> sugguedFriend = new HashMap<Integer, Integer>();
         for (int i = 0;i<listPage.size(); i++){
-            ArrayList<Integer> listFollowerPage = page.listMemberPage(listPage.get(i));
+            ArrayList<Integer> listFollowerPage = (ArrayList<Integer>) page.listMemberPage(listPage.get(i));
             for(int j = 0; j<listFollowerPage.size();j++){
                 if (sugguedFriend.containsKey(listFollowerPage.get(j))) {
                     int value = sugguedFriend.get(listFollowerPage.get(j));
