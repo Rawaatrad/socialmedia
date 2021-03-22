@@ -68,6 +68,20 @@ public class MemberMapper {
         return null;
 
     }
+    //nombre d'utilisateurs
+    public int nbreUtilisateurs() throws SQLException {
+        String query ="Select id  FROM Member";
+        Database database = new Database();
+        database.driver();
+        database.OpenConnexion();
+        ResultSet rs = database.selectExec(query);
+        int nombre=0;
+        while (rs.next()){
+            nombre +=1;
+        }
+        return nombre;
+
+    }
 
 }
 

@@ -19,7 +19,8 @@ public class Main {
         for (Member member :m){
             System.out.println(member.getNameUser());
         }
-        new LandingPage();
+        //new LandingPage();
+        System.out.println(map.nbreUtilisateurs());
 
 
 
