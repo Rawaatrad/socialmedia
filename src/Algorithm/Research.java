@@ -79,7 +79,8 @@ public class Research {
     public Member ResearchMember(Member member , String name) throws SQLException {
         ArrayList<Member> fileMember = new ArrayList<>();
         FriendshipMapper mapper = new FriendshipMapper();
-        int lastIdMember = 10000;
+        MemberMapper mapperMembre = new MemberMapper();
+        int lastIdMember = mapperMembre.nbreUtilisateurs();
         int positionInFile = 0;
         fileMember.add(member);
         Member actualMember = member;
