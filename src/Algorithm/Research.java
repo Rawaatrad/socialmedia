@@ -103,7 +103,7 @@ public class Research {
             return actualMember;
         }
         else {
-            return new Member() ;
+            return new Member(123,"error","error","error") ;
         }
     }
 

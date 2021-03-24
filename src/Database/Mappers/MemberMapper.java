@@ -63,10 +63,16 @@ public class MemberMapper {
 
             return create(rs);
         } catch (Exception e) {
-            System.out.println(e);
+
         }
         return null;
 
+    }
+    public boolean existOrNot(int id){
+        if (findById(id)!=null){
+            return true;
+        }
+        else return false;
     }
     //nombre d'utilisateurs
     public int nbreUtilisateurs() throws SQLException {

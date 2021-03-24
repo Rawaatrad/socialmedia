@@ -1,5 +1,6 @@
 package Ui;
 
+import Algorithm.Research;
 import Entity.Member;
 
 import java.sql.SQLException;
@@ -55,7 +56,12 @@ public class HomePage {
                 break;
 
             case 1:
-                //new CreateEntity();
+
+                String name = keyboard.nextLine();
+                Research research =new Research();
+                Member mem=research.ResearchMember(member,name);
+                System.out.println(mem.getId());
+
                 break;
 
             case 2:
