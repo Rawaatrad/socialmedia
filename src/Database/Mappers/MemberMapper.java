@@ -88,6 +88,17 @@ public class MemberMapper {
         return nombre;
 
     }
+    //return the biggest id
+    public int biggestId() throws SQLException {
+        String query = "select max(id) from Member";
+        Database database = new Database();
+        database.driver();
+        database.OpenConnexion();
+        ResultSet rs=database.selectExec(query);
+        rs.next();
+        return rs.getInt(1);
+
+    }
 
 }
 

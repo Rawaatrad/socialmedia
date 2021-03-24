@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         MemberMapper mapper=new MemberMapper();
-        System.out.println(mapper.existOrNot(4));
+        System.out.println(mapper.biggestId());
 
 
     }
