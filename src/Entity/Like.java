@@ -49,7 +49,8 @@ public class Like {
 
     public List<Integer> listLikerPage(int idMember ) throws SQLException {
         ArrayList<Integer> listPage =new ArrayList<Integer>() ;
-        String query ="select idPage from Liker where idMember= '"+idMember+"'";
+        System.out.println(idMember);
+        String query ="select idPage from liker where idMember= '"+idMember+"'";
         Database database = new Database();
         ResultSet rs = database.selectExec(query);
         while (rs.next())

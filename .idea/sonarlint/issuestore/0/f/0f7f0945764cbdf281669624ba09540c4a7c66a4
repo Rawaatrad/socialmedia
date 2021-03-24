@@ -1,0 +1,13 @@
+
+[
+java:S1128">Remove this unused import 'Database.Mappers.FriendshipMapper'.(Í«Áú8ÁÜğŞ…/
+Q
+java:S1128"/Remove this unused import 'Algorithm.Research'.(ÿ÷³ßúÿÿÿÿ8ÎÈó…/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ª¯Õ¹øÿÿÿÿ
+M
+java:S1128	"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÁÜğŞ…/
+H
+java:S1128"+Remove this unused import 'Ui.LandingPage'.(øÊ§û8¶õª°†/
+‹
+java:S1130"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(Á¯¦ş8¶õª°†/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ü¶È‚øÿÿÿÿ8¶õª°†/

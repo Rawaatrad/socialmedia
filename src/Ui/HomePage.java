@@ -56,11 +56,10 @@ public class HomePage {
                 break;
 
             case 1:
-
                 String name = keyboard.nextLine();
                 Research research =new Research();
                 Member mem=research.ResearchMember(member,name);
-                System.out.println(mem.getId());
+                System.out.println(mem.getNameUser());
 
                 break;
 

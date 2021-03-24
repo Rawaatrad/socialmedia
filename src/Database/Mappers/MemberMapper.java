@@ -14,7 +14,7 @@ public class MemberMapper {
     // Create a member in the database
 
     public void create(Member member) {
-        String query = "INSERT INTO Member (username,email,password) Values ('" + member.getNameUser() + "','" + member.getEmail()
+        String query = "INSERT INTO Member (nameUser,address,password) Values ('" + member.getNameUser() + "','" + member.getEmail()
                 + "','" + member.getPassword() + "')";
         Database database = new Database();
         database.driver();
@@ -39,7 +39,7 @@ public class MemberMapper {
     // Return a member by email and password
     public Member findByCredentials(String email, String password) throws SQLException {
         try {
-            String query = "select id,password,email,userName from Member where email='" + email + "'";
+            String query = "select id,password,address,nameUser from Member where address='" + email + "'";
             Database database = new Database();
             database.driver();
             database.OpenConnexion();
@@ -55,7 +55,7 @@ public class MemberMapper {
     //return a member by id
     public Member findById(int id) {
         try {
-            String query = "select id,password,email,userName from Member where id=" + id;
+            String query = "select id,password,address,nameUser from Member where id=" + id;
             Database database = new Database();
             database.driver();
             database.OpenConnexion();

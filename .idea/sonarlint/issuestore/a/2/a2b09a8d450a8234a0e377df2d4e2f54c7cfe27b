@@ -1,0 +1,30 @@
+
+U	java:S106"9Replace this use of System.out or System.err by a logger.(”ÈÈ8Ï”õˆ†/
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¶üù©ùÿÿÿÿ8Ï”õˆ†/
+V
+java:S4973W"9Use the "equals" method if value comparison was intended.(—¢¦î8¿ë›°†/
+{
+java:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").(¶üù©ùÿÿÿÿ8Ï”õˆ†/
+—
+java:S1319o"uThe type of the "fileMember" object should be an interface such as "List" rather than the implementation "ArrayList".(ìÓÚúÿÿÿÿ8¿ë›°†/
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ì§€ëøÿÿÿÿ8Ï”õˆ†/
+]	java:S1256"<This block of commented-out lines of code should be removed.(ÏÀŸÓıÿÿÿÿ8Ï”õˆ†/
+v
+java:S2293*"YReplace the type specification in this constructor call with the diamond operator ("<>").(§İ¡¦8Ï”õˆ†/
+j	java:S100="NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãüÀ8¿ë›°†/
+v
+java:S2293>"YReplace the type specification in this constructor call with the diamond operator ("<>").(—ßˆà8¿ë›°†/
+c
+java:S1192k"FDefine a constant instead of duplicating this literal "error" 3 times.(‹àêó8¿ë›°†/
+v
+java:S2293A"YReplace the type specification in this constructor call with the diamond operator ("<>").(§øëì8¿ë›°†/
+j	java:S100O"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ğÕô8¿ë›°†/
+a
+java:S1854'"?Remove this useless assignment to local variable "listFriends".(¶üù©ùÿÿÿÿ8Ï”õˆ†/
+Y
+java:S1854>"<Remove this useless assignment to local variable "listPage".(—ßˆà8¿ë›°†/
+[
+java:S4973g"9Use the "equals" method if value comparison was intended.(íùëÇúÿÿÿÿ8¿ë›°†/
+{
+java:S2293p"YReplace the type specification in this constructor call with the diamond operator ("<>").(Şõ¸ıÿÿÿÿ8¿ë›°†/

@@ -1,0 +1,30 @@
+
+@
+java:S1481"'Remove this unused "rs" local variable.(½Èàüûÿÿÿÿ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ
+?
+java:S1168"+Return an empty collection instead of null.(¥¹ï
+‰
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(å¶Èšıÿÿÿÿ
+O
+java:S1854"6Remove this useless assignment to local variable "rs".(½Èàüûÿÿÿÿ
+r
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ëçí÷øÿÿÿÿ
+„
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¨‚â…
+m
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿüê
+„
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(áç°ó
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ
+„
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(â”Ñ£
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ
+@
+java:S1481"'Remove this unused "rs" local variable.(½Èàüûÿÿÿÿ
+r	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§Êíùÿÿÿÿ
+O
+java:S1854"6Remove this useless assignment to local variable "rs".(½Èàüûÿÿÿÿ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ
+?
+java:S1168"+Return an empty collection instead of null.(¥¹ï

@@ -29,7 +29,7 @@ public class Research {
 
     private boolean notInclude(Member member, ArrayList<Member> listFriend) {
         for (int i = 0; i < listFriend.size(); i++) {
-            if (member.equals(listFriend.get(i)))
+            if (member.getId() == listFriend.get(i).getId())
                 return false;
         }
         return true;
@@ -80,11 +80,11 @@ public class Research {
         ArrayList<Member> fileMember = new ArrayList<>();
         FriendshipMapper mapper = new FriendshipMapper();
         MemberMapper mapperMembre = new MemberMapper();
-        int lastIdMember = mapperMembre.nbreUtilisateurs();
+        int nbOfMember = mapperMembre.nbreUtilisateurs();
         int positionInFile = 0;
-        fileMember.add(member);
         Member actualMember = member;
-        while (actualMember.getNameUser()!=name && actualMember.getId()==lastIdMember){
+        fileMember.add(member);
+        while (!actualMember.getNameUser().equals(name) && fileMember.size()<= nbOfMember){
             ArrayList<Member> listFriend = mapper.findFriends(actualMember);
             int friendAdded = 0;
             for(Member m: listFriend){
@@ -93,33 +93,37 @@ public class Research {
                     friendAdded ++;
                 }
             }
-            if (friendAdded == 0 && actualMember == fileMember.get(fileMember.size() - 1)){
+            //loukan mazedna hatta membre w actualmember houwa membre le5rani fil fileMembre
+            if (friendAdded == 0 && actualMember.equals(fileMember.get(fileMember.size() - 1))){
+                if(researchMemberNotInclude(fileMember)==null){
+                    return new Member(123,"ya 5ra","error","error");
+                }
                 fileMember.add(researchMemberNotInclude(fileMember));
+            }
+            if(actualMember.getNameUser().equals(name)){
+                return actualMember;
             }
             positionInFile = positionInFile + 1;
             actualMember = fileMember.get(positionInFile);
-
         }
-        if(actualMember.getNameUser() == name){
+        if(actualMember.getNameUser().equals(name)){
             return actualMember;
-        }
-        else {
-            return new Member(123,"error","error","error") ;
-        }
-    }
+        }else {
+            return new Member(123,"ya 5ra","error","error") ;
 
-    public Member researchMemberNotInclude(ArrayList<Member>fileMember){
+    }}
+
+    public Member researchMemberNotInclude(ArrayList<Member>fileMember) throws SQLException {
         ArrayList<Integer> id = new ArrayList<Integer>();
         MemberMapper mapper = new MemberMapper();
-        for(Member m: fileMember){
-            id.add(m.getId());
-        }
-        Collections.sort(id);
-        for(int i = 0; i < id.size() ; i++){
-            if(i!= id.get(i)){
-                return mapper.findById(i);
+        for(int i = 0; i < mapper.biggestId() ; i++){
+            if(mapper.existOrNot(i)){
+                Member member_i = mapper.findById(i);
+                if(notInclude(member_i,fileMember)){
+                    return member_i;
+                }
             }
         }
-        return mapper.findById(id.size()) ;
+        return null ;
     }
 }

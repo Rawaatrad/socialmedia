@@ -26,7 +26,7 @@ public class Database implements java.io.Serializable {
     public boolean OpenConnexion() {
         try {
             String url = "jdbc:mysql://localhost:3306/socialmedia";
-            con = DriverManager.getConnection(url, "root", "Raw3aTrad.");
+            con = DriverManager.getConnection(url, "root", "rawaa");
             return true;
         } catch (Exception e) {
             System.out.println("Echec de l'ouverture de la connexion :" + e.getMessage());
