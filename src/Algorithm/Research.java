@@ -38,30 +38,43 @@ public class Research {
     public void suggestionFriendCommun(Member member) throws SQLException {
         ArrayList<Member> listFriends = new ArrayList<Member>();
         FriendshipMapper friendship = new FriendshipMapper();
+        MemberMapper mapper = new MemberMapper();
         listFriends = friendship.findFriends(member);
         HashMap<Member, Integer> sugguedFriend = new HashMap<Member, Integer>();
         for (int i = 0; i < listFriends.size(); i++) {
             ArrayList<Member> listFriendsOfFriend = friendship.findFriends(listFriends.get(i));
             for (int j = 0; j < listFriendsOfFriend.size(); j++) {
-                if (sugguedFriend.containsKey(listFriendsOfFriend.get(j))) {
-                    int value = sugguedFriend.get(listFriendsOfFriend.get(j));
-                    sugguedFriend.put(listFriendsOfFriend.get(j), value + 1);
-                }
-                else {
-                    sugguedFriend.put(listFriendsOfFriend.get(j), 1);
+                Member m = listFriendsOfFriend.get(j);
+                if (notInclude(m, listFriends)&& m.getId()!=member.getId()){
+                    if (sugguedFriend.containsKey(m)){
+                        int value = sugguedFriend.get(listFriendsOfFriend.get(j));
+                        sugguedFriend.put(listFriendsOfFriend.get(j), value + 1);
+                    }else {
+                        sugguedFriend.put(listFriendsOfFriend.get(j), 1);
+                    }
                 }
             }
-           // List<> suggestion = new ArrayList<>(sugguedFriend.keySet());
-            //Collections.sort(suggestion);
-            //SortedSet<Member> keySet = new TreeSet<>(sugguedFriend.keySet());
-            //trier(listFriendsOfFriend);
+        }
+        ArrayList<Member> result = new ArrayList<Member>();
+        List<Integer> rec = new ArrayList<>(sugguedFriend.values());
+        Collections.sort(rec);
+        for(int i:rec){
+            for (Map.Entry mapentry : sugguedFriend.entrySet()) {
+                if((int)mapentry.getValue()==i && notInclude((Member) mapentry.getKey(),result)){
+                    result.add((Member) mapentry.getKey());
+                    break;
+                }
+            }
+        }
+        for (Member m: result){
+            System.out.println(m.getNameUser());
         }
     }
-
-    public void SuggestionPageCommun(Member member) throws SQLException {
+    public void suggestionPageCommun(Member member) throws SQLException {
         ArrayList<Integer> listPage = new ArrayList<Integer>();
         Like page = new Like();
         listPage = (ArrayList<Integer>) page.listLikerPage(member.getId());
+        //hashMap<id,reccurence>
         HashMap<Integer, Integer> sugguedFriend = new HashMap<Integer, Integer>();
         for (int i = 0;i<listPage.size(); i++){
             ArrayList<Integer> listFollowerPage = (ArrayList<Integer>) page.listMemberPage(listPage.get(i));
@@ -74,6 +87,9 @@ public class Research {
                     sugguedFriend.put(listFollowerPage.get(j), 1);
                 }
             }
+        }
+        for (int i: sugguedFriend.keySet()){
+            System.out.println(i);
         }
     }
     public Member ResearchMember(Member member , String name) throws SQLException {

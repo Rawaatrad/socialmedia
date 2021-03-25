@@ -62,7 +62,7 @@ public class LikerMapper {
         return null;
     }
     public void create(Like like) {
-        String query= "INSERT INTO Liker (id,idMember,idPage) Values ('"+like.getId()+"','"+like.getIdPage()
+        String query= "INSERT INTO liker (id,idMember,idPage) Values ('"+like.getId()+"','"+like.getIdPage()
                 +"','"+like.getIdMember()+"')";
         Database database=new Database();
         database.updateExec(query);
